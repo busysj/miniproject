@@ -13,6 +13,9 @@
   color: white;
 }
 
+.textcolor {
+  color: white;
+}
 form {
   text-align: center;
 }
@@ -28,15 +31,36 @@ form input[type="text"]::placeholder {
   text-align: center;
 }
 
-/* form input[type="text"]:focus {
-  border: none;
-} */
+form input[type="text"]:focus {
+  outline: none;
+}
 
-form input[type="submit"] {
+form input[type="submit"],
+form input[type="button"] {
   background-color: lightgrey;
   border: none;
   border-radius: 30px;
   padding: 5px 10px;
+}
+
+form input[type="submit"]:hover {
+  background-color: lightblue;
+}
+
+form input[type="button"]:hover {
+  background-color: lightpink;
+}
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  border-bottom: 1px solid white;
+  margin-top: 10px;
+}
+
+ul li button {
+  float: right;
 }
 
 .flex {
@@ -51,4 +75,12 @@ form input[type="submit"] {
   padding: 20px;
   margin: 10px;
   word-break: break-word;
+}
+
+#todo-board {
+  color: white;
+}
+
+#memo-board {
+  font-weight: bold;
 }
