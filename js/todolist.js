@@ -49,3 +49,25 @@ function todoDelete(event) {
   // checkbox를 통해 li를 찾아서 삭제(remove)
   event.target.parentNode.remove();
 }
+
+$("#todo-button").on("click", function () {
+  const checkbox = $("<input>").prop("type", "checkbox");
+  checkbox.on("click", function (event) {
+    if (event.target.checked) {
+      checkbox.parent().css("color", "lightgray");
+    } else {
+      checkbox.parent().css("color", "black");
+    }
+  });
+
+  const button = $("<button").text("X");
+  button.on("click", function (event) {
+    event.targetparentNode.remove();
+  });
+
+  const todo = $("#memo-form input:first").prop("value");
+
+  $("#todo-board").append(
+    $("<li>").append(checkbox).append(todo).append(button)
+  );
+});

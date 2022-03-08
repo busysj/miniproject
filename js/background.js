@@ -12,3 +12,5 @@ function BackgroundImg() {
 }
 
 setInterval(BackgroundImg, 30000);
+
+$("body").css("background", `url(/img/${chooseImage})`);

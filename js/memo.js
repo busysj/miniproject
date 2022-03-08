@@ -35,4 +35,15 @@ function memoFormSubmit(event) {
   memoInput.autofocus = true;
 }
 
-memoForm.addEventListener("submit", memoFormSubmit);
+// memoForm.addEventListener("submit", memoFormSubmit);
+
+$("#memo-form").on("submit", function (event) {
+  event.preventDefault();
+
+  $("#memo-board").append(
+    $("<div>").html(
+      $("#memo-form input:first").prop("value") + "<br>" + getClock()
+    )
+  );
+  $("#memo-form input:first").prop("value", "");
+});

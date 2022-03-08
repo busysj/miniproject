@@ -27,4 +27,14 @@ function onLoginSubmit(event) {
 // 이벤트 리스너 : 이벤트가 발생하는지 듣고 있는 메소드
 // 이벤트가 발생할 때 그 함수를 실행시켜주는 역할
 // 어디에 이벤트가 발생하면, 어떤 함수 실행시켜야 하는지.
-loginForm.addEventListener("submit", onLoginSubmit);
+
+// loginForm.addEventListener("submit", onLoginSubmit);
+
+$("#login-form").on("submit", function (event) {
+  event.preventDefault();
+  const username = $("#login-form input").prop("value");
+  $("#greeting").text(`반갑습니다  ${username}님`);
+
+  $("#login-form").addClass("hidden");
+  $("#memo-form").removeClass("hidden");
+});
